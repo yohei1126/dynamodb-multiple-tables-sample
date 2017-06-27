@@ -3,6 +3,17 @@ http://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/CodeSample
 
 ## インストール
 
+### DynamoDB（ローカル版）
+
+以下からダウンロードする。
+http://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/DynamoDBLocal.html
+
+```
+$ java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb
+```
+
+### npm パッケージ
+
 ```
 $ npm install
 ```
