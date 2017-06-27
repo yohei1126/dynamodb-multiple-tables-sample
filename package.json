@@ -1,0 +1,15 @@
+{
+  "name": "dynamo-multiple-table-sample",
+  "version": "1.0.0",
+  "dependencies": {
+    "aws-sdk": "^2.77.0"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.3",
+    "tslint": "^5.4.3",
+    "typescript": "^2.3.4"
+  },
+  "scripts":{
+    "build": "rm -rf src & tsc"
+  }
+}
