@@ -46,7 +46,7 @@ $ aws dynamodb scan --endpoint-url http://localhost:8000 --table-name Forum
 ## アイテムのクエリ（グローバルセカンダリーインデックスを使った）
 
 ```
-$ aws dynamodb scan --endpoint-url http://localhost:8000 --table-name Forum
+$ node src/QueryItems.js
 ```
 
 ## テーブルの削除
