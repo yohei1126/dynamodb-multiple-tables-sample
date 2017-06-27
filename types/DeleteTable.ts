@@ -5,14 +5,14 @@ const db = new DynamoDB({
     endpoint: "http://localhost:8000"
 });
 
-const inputs: Array<DynamoDB.DeleteTableInput> = [
+const inputs: DynamoDB.DeleteTableInput[] = [
     { TableName : "ProductCatalog" },
     { TableName : "Forum" },
     { TableName : "Thread" },
     { TableName : "Reply" }
 ];
 
-inputs.forEach((params, index, array) => {
+inputs.forEach((params: DynamoDB.DeleteTableInput, index: number, array: DynamoDB.DeleteTableInput[]) => {
     db.deleteTable(params, (err: AWSError, data: DynamoDB.DeleteTableOutput) => {
         if (err) {
             console.error("Unable to delete table. Error JSON:", JSON.stringify(err, null, 2));

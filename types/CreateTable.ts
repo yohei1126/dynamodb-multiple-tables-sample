@@ -10,7 +10,7 @@ const defaultThroughput = {
     WriteCapacityUnits: 10
 };
 
-const inputs: Array<DynamoDB.CreateTableInput> = [
+const inputs: DynamoDB.CreateTableInput[] = [
     {
         TableName : "ProductCatalog",
         KeySchema: [
@@ -72,7 +72,7 @@ const inputs: Array<DynamoDB.CreateTableInput> = [
     }
 ];
 
-inputs.forEach((params, index, array) => {
+inputs.forEach((params: DynamoDB.CreateTableInput, index: number, array: DynamoDB.DeleteTableInput[]) => {
     db.createTable(params, (err: AWSError, data: DynamoDB.CreateTableOutput) => {
         if (err) {
             console.error("Unable to create table. Error JSON:", JSON.stringify(err, null, 2));

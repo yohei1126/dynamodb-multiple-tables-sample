@@ -17,7 +17,7 @@ const params: DynamoDB.QueryInput = {
 docClient.query(params, (err: AWSError, data: DynamoDB.QueryOutput) => {
     if (err) {
         console.error("Unable to query. Error:", JSON.stringify(err, null, 2));
-    } else {
+    } else if (data && data.Items) {
         console.log("Query succeeded.");
         data.Items.forEach((item) => {
             console.log(" -", JSON.stringify(item));

@@ -23,10 +23,10 @@ $ node src/CreateTable.js
 
 ```
 $ cd data
-$ aws dynamodb batch-write-item --endpoint-url http://localhost:8000 --request-items file://ProductCatalog.json
-$ aws dynamodb batch-write-item --endpoint-url http://localhost:8000 --request-items file://Forum.json
-$ aws dynamodb batch-write-item --endpoint-url http://localhost:8000 --request-items file://Thread.json
-$ aws dynamodb batch-write-item --endpoint-url http://localhost:8000 --request-items file://Reply.json
+$ aws dynamodb batch-write-item --endpoint-url http://localhost:8000 --request-items file://data/ProductCatalog.json
+$ aws dynamodb batch-write-item --endpoint-url http://localhost:8000 --request-items file://data/Forum.json
+$ aws dynamodb batch-write-item --endpoint-url http://localhost:8000 --request-items file://data/Thread.json
+$ aws dynamodb batch-write-item --endpoint-url http://localhost:8000 --request-items file://data/Reply.json
 ```
 
 問題ない場合は、以下の表示が出る。
@@ -40,17 +40,20 @@ $ aws dynamodb batch-write-item --endpoint-url http://localhost:8000 --request-i
 ## アイテムのスキャン（全件確認）
 
 ```
+$ aws dynamodb scan --endpoint-url http://localhost:8000 --table-name ProductCatalog
 $ aws dynamodb scan --endpoint-url http://localhost:8000 --table-name Forum
+$ aws dynamodb scan --endpoint-url http://localhost:8000 --table-name Thread
+$ aws dynamodb scan --endpoint-url http://localhost:8000 --table-name Reply
 ```
 
 ## アイテムのクエリ（グローバルセカンダリーインデックスを使った）
 
 ```
-$ aws dynamodb scan --endpoint-url http://localhost:8000 --table-name Forum
+$ node src/QueryItems.js
 ```
 
 ## テーブルの削除
 
 ```
-$ node src/CreateTable.js
+$ node src/DeleteTable.js
 ```
