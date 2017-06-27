@@ -33,7 +33,6 @@ $ node src/CreateTable.js
 ## データの追加
 
 ```
-$ cd data
 $ aws dynamodb batch-write-item --endpoint-url http://localhost:8000 --request-items file://data/ProductCatalog.json
 $ aws dynamodb batch-write-item --endpoint-url http://localhost:8000 --request-items file://data/Forum.json
 $ aws dynamodb batch-write-item --endpoint-url http://localhost:8000 --request-items file://data/Thread.json

@@ -77,7 +77,7 @@ inputs.forEach((params: DynamoDB.CreateTableInput, index: number, array: DynamoD
         if (err) {
             console.error("Unable to create table. Error JSON:", JSON.stringify(err, null, 2));
         } else {
-        console.log("Created table. Table description JSON:", JSON.stringify(data, null, 2));
-    }
-});
+            console.log("Created table. Table description JSON:", JSON.stringify(data, null, 2));
+        }
+    });
 });
